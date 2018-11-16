@@ -76,6 +76,7 @@ type Device struct {
 	Name            DeviceName    `json:"name"`
 	WillReportState bool          `json:"willReportState"`
 	Attributes      struct {
+		Pausable bool `json:"pausable"`
 	} `json:"attributes,omitempty"`
 	RoomHint   string                 `json:"roomHint,omitempty"`
 	DeviceInfo *DeviceInfo            `json:"deviceInfo,omitempty"`
