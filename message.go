@@ -53,7 +53,7 @@ type DeviceState struct {
 	Online     bool `json:"online"`
 	Brightness int  `json:"brightness"`
 	IsRunning  bool `json:"isRunning"`
-	IsPaused   bool `json:"false"`
+	IsPaused   bool `json:"isPaused"`
 }
 
 type CommandResponse struct {
