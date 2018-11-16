@@ -68,19 +68,19 @@ type DeviceInfo struct {
 	HwVersion    string `json:"hwVersion"`
 	SwVersion    string `json:"swVersion"`
 }
-
+type Attributes struct {
+	Pausable bool `json:"pausable"`
+}
 type Device struct {
-	Id              string        `json:"id"`
-	Type            DeviceType    `json:"type"`
-	Traits          []DeviceTrait `json:"traits"`
-	Name            DeviceName    `json:"name"`
-	WillReportState bool          `json:"willReportState"`
-	Attributes      struct {
-		Pausable bool `json:"pausable"`
-	} `json:"attributes,omitempty"`
-	RoomHint   string                 `json:"roomHint,omitempty"`
-	DeviceInfo *DeviceInfo            `json:"deviceInfo,omitempty"`
-	CustomData map[string]interface{} `json:"customData,omitempty"`
+	Id              string                 `json:"id"`
+	Type            DeviceType             `json:"type"`
+	Traits          []DeviceTrait          `json:"traits"`
+	Name            DeviceName             `json:"name"`
+	WillReportState bool                   `json:"willReportState"`
+	Attributes      Attributes             `json:"attributes,omitempty"`
+	RoomHint        string                 `json:"roomHint,omitempty"`
+	DeviceInfo      *DeviceInfo            `json:"deviceInfo,omitempty"`
+	CustomData      map[string]interface{} `json:"customData,omitempty"`
 }
 
 func (b *Bridge) HandleExec(d Device, execFn ExecHandlerFunc) {
