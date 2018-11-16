@@ -35,7 +35,7 @@ type ExecResponse struct {
 
 type CommandRequest struct {
 	Command string `json:"command"`
-	Params struct {
+	Params  struct {
 		On         bool `json:"on"`
 		Brightness int  `json:"brightness"`
 	} `json:"params"`
@@ -52,6 +52,8 @@ type DeviceState struct {
 	On         bool `json:"on"`
 	Online     bool `json:"online"`
 	Brightness int  `json:"brightness"`
+	IsRunning  bool `json:"isRunning"`
+	IsPaused   bool `json:"false"`
 }
 
 type CommandResponse struct {
